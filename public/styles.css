@@ -88,6 +88,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 68px; } /* keep anchored sections clear of the sticky header */
 body {
   font-family: var(--font-body);
   color: var(--text);
@@ -171,6 +172,23 @@ em { font-style: italic; color: var(--accent-text); }
 .theme-switch button:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 .theme-switch svg { width: 16px; height: 16px; }
 
+/* Mobile menu button (shown on small screens only) */
+.menu-toggle {
+  display: none;
+  place-items: center;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.menu-toggle svg { width: 22px; height: 22px; }
+.menu-toggle .menu-close { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-open { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-close { display: inline; }
+.menu-toggle:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
 /* Hero */
 .hero {
   padding: 7rem 0 6rem;
@@ -224,6 +242,8 @@ em { font-style: italic; color: var(--accent-text); }
 .contact-form label { display: grid; gap: .4rem; font-size: .9rem; font-weight: 500; color: var(--band-label); }
 .contact-form input, .contact-form textarea {
   font: inherit;
+  font-size: 1rem; /* 16px+ stops iOS from zooming on focus */
+  width: 100%;
   color: var(--field-text);
   background: var(--field-bg);
   border: 2px solid var(--line);
@@ -241,19 +261,46 @@ em { font-style: italic; color: var(--accent-text); }
 .footer p { font-size: .9rem; }
 
 @media (max-width: 760px) {
-  .nav nav a:not(.btn) { display: none; }
-  .nav-right { gap: .75rem; }
+  .nav-right { gap: .6rem; }
+  .menu-toggle { display: grid; }
+  .theme-switch button { width: 36px; height: 36px; }
+  .nav nav {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .5rem 20px 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 30px var(--shadow);
+  }
+  .nav nav.open { display: flex; }
+  .nav nav a:not(.btn) {
+    padding: .9rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav nav .btn-small { margin-top: 1rem; padding: .9rem 1.6rem; font-size: 1rem; text-align: center; }
+  .hero-actions .btn { flex: 1 1 220px; text-align: center; }
   .hero { padding: 4.5rem 0 4rem; }
   .section { padding: 4rem 0; }
   .about { grid-template-columns: 1fr; gap: 0; }
   .contact-form .row { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 400px) {
-  .nav-right { gap: .5rem; }
+/* Touch screens (phones, tablets): bigger tap targets */
+@media (pointer: coarse) {
+  .nav nav a:not(.btn) { padding: .6rem 0; }
+  .theme-switch button { width: 36px; height: 36px; }
+}
+
+@media (max-width: 360px) {
+  .nav-right { gap: .4rem; }
   .logo { font-size: 1.3rem; }
-  .btn-small { padding: .5rem .8rem; font-size: .85rem; }
-  .theme-switch button { width: 26px; height: 26px; }
+  .theme-switch button { width: 32px; height: 32px; }
+  .menu-toggle { width: 40px; height: 40px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
