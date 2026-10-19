@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Be Human — Consulting that puts people first</title>
+  <meta name="description" content="Be Human is a consulting company helping organizations adopt AI and technology without losing the human touch.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="Be Human home">be<span>human</span></a>
+      <nav aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-small">Let's talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Consulting · Strategy · AI</p>
+        <h1>Technology moves fast.<br><em>Stay human.</em></h1>
+        <p class="lead">Be Human helps organizations adopt AI and modern technology in ways that strengthen their people, not replace them. Practical strategy, honest advice, real results.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Book a conversation</a>
+          <a href="#services" class="btn btn-ghost">See what we do</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow">What we do</p>
+        <h2>Services built around people</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">◎</div>
+            <h3>AI strategy</h3>
+            <p>Find where AI creates real value in your business, and where it doesn't. A clear roadmap, not hype.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">⟳</div>
+            <h3>Digital transformation</h3>
+            <p>Modernize processes and systems with change management that brings your team along.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">♡</div>
+            <h3>People &amp; culture</h3>
+            <p>Build the skills, confidence, and culture your people need to thrive alongside new technology.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">◆</div>
+            <h3>Advisory</h3>
+            <p>Ongoing, senior-level guidance for leaders making big technology and organizational decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">How we work</p>
+        <h2>A simple, human approach</h2>
+        <ol class="steps">
+          <li><span>01</span><h3>Listen</h3><p>We start with your people, your goals, and the problems that keep you up at night.</p></li>
+          <li><span>02</span><h3>Design</h3><p>Together we shape a plan that fits your organization, budget, and pace.</p></li>
+          <li><span>03</span><h3>Deliver</h3><p>We roll up our sleeves and help implement, measure, and adjust.</p></li>
+          <li><span>04</span><h3>Empower</h3><p>We leave your team stronger and more capable than when we arrived.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Why "Be Human"?</h2>
+        </div>
+        <div>
+          <p>The best technology amplifies what makes us human: curiosity, empathy, judgment, and creativity. We believe the organizations that win in the age of AI will be the ones that never lose sight of that.</p>
+          <p>Be Human is a consulting practice for leaders who want to move forward with confidence and keep people at the center of every decision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta">
+      <div class="container cta-inner">
+        <h2>Let's start a conversation</h2>
+        <p>Tell us a little about what you're working on. We'll get back to you within one business day.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="row">
+            <label>Name<input type="text" name="name" required autocomplete="name"></label>
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          </div>
+          <label>Company<input type="text" name="company" autocomplete="organization"></label>
+          <label>How can we help?<textarea name="message" rows="4" required></textarea></label>
+          <button type="submit" class="btn">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#top" class="logo">be<span>human</span></a>
+      <p>&copy; <span id="year">2026</span> Be Human Consulting. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
